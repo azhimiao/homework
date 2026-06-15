@@ -1,0 +1,34 @@
+# 开发板 → Quartus 器件（准确配置）
+
+**Family / Device 必须与板卡一致**，否则编译或下载失败。
+
+| board_id | 板卡 | FPGA Family | Device | 说明 |
+|----------|------|-------------|--------|------|
+| DE10-Lite | Terasic DE10-Lite | MAX 10 | **10M50DAF484C7G** | 计组最常见；非 Cyclone |
+| DE10-Standard | Terasic DE10-Standard | Cyclone V | 5CSXFC6D6F31C6 | 含 HPS |
+| DE1-SoC | Terasic DE1-SoC | Cyclone V | 5CSEMA5F31C6 | SoC 实验 |
+| DE2-115 | Terasic DE2-115 | Cyclone IV E | EP4CE115F29C7 | 经典板 |
+| DE0-CV | Terasic DE0-CV | Cyclone V | 5CEBA4F23C7 | CV 系列 |
+
+## New Project Wizard 填写要点
+
+1. **Project name** = 顶层实体名（与 .v 模块名一致，区分大小写）
+2. **Top-level entity** = 同上
+3. **Family** / **Device** = 上表精确值
+4. **EDA Tool** = Quartus Prime（默认）
+
+## 安装 Quartus 时需勾选的 Device Support
+
+| 板卡 | 需安装 support |
+|------|----------------|
+| DE10-Lite | **MAX 10** |
+| DE1-SoC / DE10-Standard / DE0-CV | **Cyclone V** |
+| DE2-115 | **Cyclone IV E** |
+
+Lite Edition 免费，版本号以 Intel 官网为准（如 24.1std）。
+
+## 禁止
+
+- 不得将 DE10-Lite 选成 Cyclone 器件
+- 不得省略 Device 型号只选 Family
+- 不得编造未在手册出现的引脚

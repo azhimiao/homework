@@ -1,0 +1,301 @@
+version: "3.0"
+
+majors:
+  - id: cs
+    aliases: [计算机, 计算机科学, 计算机科学与技术, 软件工程, CS, 计科, 计算机专业, 物联网, 嵌入式]
+  - id: ee
+    aliases: [电子信息, 电子信息工程, 电子, 通信工程, EE, 电信, 光电, 微电子]
+  - id: auto
+    aliases: [自动化, 电气工程及其自动化, 电气, 控制, 测控]
+  - id: mech
+    aliases: [机械, 机械工程, 机电, 车辆, 飞行器, 能源动力]
+  - id: civil
+    aliases: [土木, 建筑工程, 水利, 交通工程]
+  - id: phys
+    aliases: [物理, 应用物理, 数理]
+  - id: chem
+    aliases: [化学, 化工, 材料, 高分子, 应化]
+  - id: math
+    aliases: [数学, 统计学, 信计, 应用数学, 金融数学]
+  - id: bio
+    aliases: [生物, 生物医学, 生物工程, 生命科学]
+  - id: stem
+    aliases: [理工科, 工科, 理科, 工科大类]
+
+assignments:
+  - id: comp-org-quartus
+    title: 计算机组成原理实验 / FPGA 数字逻辑实验
+    status: ready
+    majors: [cs, ee, auto]
+    match_keywords:
+      - 组成原理
+      - 计组
+      - 计算机组成
+      - 数字逻辑
+      - quartus
+      - fpga
+      - verilog
+      - vhdl
+      - altera
+      - intel fpga
+      - de10
+      - de1
+      - terasic
+      - max10
+      - cyclone
+      - 引脚分配
+      - 可编程逻辑
+    skills_to_install:
+      - name: quartus-lab
+        scope: project
+    default_board: DE10-Lite
+    workspace_subdir: comp-org-lab
+    deliverables:
+      - Quartus 工程 (.qpf / .qsf)
+      - 设计源文件 (.v / .vhd / .bdf)
+      - 引脚分配文件或 Pin Planner 导出
+      - 编译成功截图或 build-log
+      - 仿真波形或 RTL 截图（若要求）
+      - 实验报告（按学院模板）
+
+  - id: vivado-fpga-lab
+    title: Xilinx Vivado FPGA 实验
+    status: planned
+    majors: [cs, ee, auto]
+    match_keywords: [vivado, xilinx, zynq, artix, kintex, 赛灵思, fpga实验]
+    skills_to_install: []
+    workspace_subdir: vivado-lab
+    deliverables: [Verilog/VHDL, 约束 XDC, 综合实现 log, 报告]
+    note: 见 universal-stem-workflow.md
+
+  - id: python-coursework
+    title: Python 程序设计作业
+    status: ready
+    majors: [cs, math, bio, stem]
+    match_keywords: [python, 程序设计, 程设, pandas, numpy作业, 爬虫, py作业]
+    skills_to_install:
+      - name: python-lab
+        scope: project
+    workspace_subdir: python-homework
+    deliverables: [源代码, requirements.txt, 运行截图, 报告]
+
+  - id: java-oop-coursework
+    title: Java 面向对象作业
+    status: ready
+    majors: [cs]
+    match_keywords: [java, 面向对象, junit, maven, oop]
+    skills_to_install:
+      - name: java-oop-lab
+        scope: project
+    workspace_subdir: java-homework
+    deliverables: [源码, JUnit, 编译截图, 报告]
+
+  - id: ds-algorithm-coursework
+    title: 数据结构算法实验
+    status: ready
+    majors: [cs]
+    match_keywords: [数据结构, 算法, 链表, 二叉树, 图论, leetcode]
+    skills_to_install:
+      - name: ds-algorithm-lab
+        scope: project
+    workspace_subdir: ds-homework
+    deliverables: [实现代码, 复杂度说明, 测试, 报告]
+
+  - id: ml-coursework
+    title: 机器学习课设
+    status: ready
+    majors: [cs, math, ee]
+    match_keywords: [机器学习, jupyter, sklearn, pytorch, 课设, 数据分析, 深度学习]
+    skills_to_install:
+      - name: ml-notebook-lab
+        scope: project
+    workspace_subdir: ml-homework
+    deliverables: [notebook, requirements.txt, 图表, 报告]
+
+  - id: matlab-control-lab
+    title: MATLAB / Simulink 仿真实验
+    status: ready
+    majors: [ee, auto, cs, mech, phys]
+    match_keywords:
+      - matlab
+      - simulink
+      - 自动控制
+      - 控制原理
+      - 现代控制
+      - 传递函数
+      - pid
+      - 阶跃响应
+      - 根轨迹
+      - 信号与系统
+    skills_to_install:
+      - name: matlab-simulink-lab
+        scope: project
+    workspace_subdir: matlab-lab
+    deliverables: [.m或.slx, 波形截图, params说明, 报告]
+
+  - id: multisim-circuit-lab
+    title: Multisim 电路仿真实验
+    status: ready
+    majors: [ee, auto, phys]
+    match_keywords:
+      - multisim
+      - 电路分析
+      - 模拟电路
+      - 数字电路
+      - 电工电子
+      - ni multisim
+      - 电路仿真
+    skills_to_install:
+      - name: multisim-lab
+        scope: project
+    workspace_subdir: multisim-lab
+    deliverables: [电路工程, 波形截图, 元件表, 报告]
+
+  - id: ltspice-circuit-lab
+    title: LTspice / PSPICE 电路仿真
+    status: planned
+    majors: [ee, auto, phys]
+    match_keywords: [ltspice, pspice, spice, 电路仿真, 运放, 滤波器]
+    skills_to_install: []
+    workspace_subdir: spice-lab
+    deliverables: [.asc或.cir, 仿真波形, 参数表, 报告]
+
+  - id: keil-embedded-lab
+    title: Keil / 嵌入式单片机实验
+    status: ready
+    majors: [ee, auto, cs]
+    match_keywords:
+      - keil
+      - uvision
+      - stm32
+      - 51单片机
+      - 8051
+      - 嵌入式
+      - mdk
+      - 单片机实验
+    skills_to_install:
+      - name: keil-embedded-lab
+        scope: project
+    workspace_subdir: keil-lab
+    default_mcu: STM32F103C8
+    deliverables: [Keil工程, 源码, build.log, hex, 报告]
+
+  - id: proteus-embedded-lab
+    title: Proteus 单片机仿真
+    status: planned
+    majors: [ee, auto, cs]
+    match_keywords: [proteus, isis, 单片机仿真, 8086]
+    skills_to_install: []
+    workspace_subdir: proteus-lab
+    deliverables: [源码, 元件清单, 仿真截图, 报告]
+
+  - id: ccs-ti-embedded-lab
+    title: CCS / TI 嵌入式实验
+    status: planned
+    majors: [ee, auto]
+    match_keywords: [ccs, code composer, msp430, dsp28335, ti]
+    skills_to_install: []
+    workspace_subdir: ccs-lab
+    deliverables: [CCS工程, 源码, 编译log, 报告]
+
+  - id: labview-measurement-lab
+    title: LabVIEW 虚拟仪器实验
+    status: planned
+    majors: [ee, auto, mech, phys]
+    match_keywords: [labview, 虚拟仪器, vi, 数据采集, daq]
+    skills_to_install: []
+    workspace_subdir: labview-lab
+    deliverables: [VI说明, 前面板规格, 框图检查清单, 报告]
+
+  - id: ansys-fea-lab
+    title: ANSYS / 有限元分析实验
+    status: planned
+    majors: [mech, civil, ee]
+    match_keywords: [ansys, abaqus, 有限元, fea, 静力分析, 模态]
+    skills_to_install: []
+    workspace_subdir: fea-lab
+    deliverables: [几何/网格说明, 边界条件表, 结果云图, 报告]
+
+  - id: comsol-multiphysics-lab
+    title: COMSOL 多物理场仿真
+    status: planned
+    majors: [phys, chem, mech, ee]
+    match_keywords: [comsol, 多物理场, 传热, 流体, 电磁场仿真]
+    skills_to_install: []
+    workspace_subdir: comsol-lab
+    deliverables: [模型说明, 边界条件, 网格, 后处理图, 报告]
+
+  - id: solidworks-cad-lab
+    title: SolidWorks / Creo 三维建模
+    status: planned
+    majors: [mech, civil]
+    match_keywords: [solidworks, creo, proe, catia, 三维建模, 机械设计]
+    skills_to_install: []
+    workspace_subdir: cad-lab
+    deliverables: [零件说明, 装配清单, 工程图标注, 报告]
+
+  - id: autocad-drafting-lab
+    title: AutoCAD 制图作业
+    status: planned
+    majors: [civil, mech, ee]
+    match_keywords: [autocad, cad制图, 工程制图, 平面图]
+    skills_to_install: []
+    workspace_subdir: autocad-lab
+    deliverables: [DWG或制图规范, 图层说明, 尺寸标注清单, 报告]
+
+  - id: origin-graph-lab
+    title: Origin 作图与数据处理
+    status: planned
+    majors: [phys, chem, bio, ee]
+    match_keywords: [origin, 作图, 实验数据处理, 曲线拟合]
+    skills_to_install: []
+    workspace_subdir: origin-lab
+    deliverables: [数据表, 图件, 拟合参数, 报告]
+
+  - id: spss-stats-lab
+    title: SPSS / Stata 统计分析
+    status: planned
+    majors: [math, bio, cs, stem]
+    match_keywords: [spss, stata, 统计分析, 回归, 方差分析]
+    skills_to_install: []
+    workspace_subdir: stats-lab
+    deliverables: [变量编码, 分析步骤, 结果表, 报告]
+
+  - id: altium-pcb-lab
+    title: Altium / Cadence PCB 设计
+    status: planned
+    majors: [ee]
+    match_keywords: [altium, cadence, allegro, pcb, 原理图, 版图]
+    skills_to_install: []
+    workspace_subdir: pcb-lab
+    deliverables: [原理图, BOM, 设计规则, 报告]
+
+  - id: stem-universal-fallback
+    title: 理工科通用作业辅助
+    status: ready
+    majors: [cs, ee, auto, mech, civil, phys, chem, math, bio, stem]
+    match_keywords: []
+    skills_to_install: []
+    workspace_subdir: homework
+    deliverables: [按教师/作业要求逐项列出]
+    note: READ universal-stem-workflow.md + stem-tool-matrix.md
+
+matching:
+  min_score: 2
+  tie_threshold: 1
+  keyword_weight: 2
+  major_weight: 3
+
+install:
+  default_host: cursor
+  default_scope: project
+  cli_template: "python skill-core/skill.py install {skill} --host {host} --scope {scope} --project {project_dir} --force"
+  resolve_order:
+    - registry
+    - examples/student-homework/{skill}
+    - examples/coding-homework/{skill}
+    - examples/simulation-lab/{skill}
+    - examples/{skill}
+    - skill-forge/built/simulation-lab/{skill}
+    - skill-forge/built/coding-homework/{skill}
+    - skill-forge/built/student-homework/{skill}

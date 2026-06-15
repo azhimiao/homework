@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://skill-protocol.dev/v2/ir.schema.json",
+  "title": "Skill Protocol IR",
+  "description": "Intermediate Representation for Agent Skills (Skill Protocol v2)",
+  "type": "object",
+  "required": [
+    "skill_name",
+    "intent",
+    "inputs",
+    "outputs",
+    "execution_plan",
+    "failure_modes",
+    "versioning"
+  ],
+  "properties": {
+    "$schema": { "const": "skill-protocol/v2/ir" },
+    "skill_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "compile_target": {
+      "type": "object",
+      "properties": {
+        "deploy_to": { "type": "string" },
+        "host": { "type": "string" },
+        "invocation": { "enum": ["auto", "manual"] },
+        "disable-model-invocation": { "type": "boolean" },
+        "output_profile": {
+          "enum": ["structured", "artifact", "narrative", "hybrid"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "intent": {
+      "type": "object",
+      "required": ["goal", "context"],
+      "properties": {
+        "goal": { "type": "string", "minLength": 1 },
+        "context": { "type": "string", "minLength": 1 },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "required": ["required"],
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "optional": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["profile"],
+      "properties": {
+        "profile": {
+          "enum": ["structured", "artifact", "narrative", "hybrid"]
+        }
+      }
+    },
+    "decomposition": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^S[0-9]+$" },
+          "name": { "type": "string" },
+          "goal": { "type": "string" },
+          "inputs": { "type": "string" },
+          "outputs": { "type": "string" },
+          "verb": { "type": "string" }
+        }
+      }
+    },
+    "execution_plan": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3 },
+      "minItems": 3
+    },
+    "decision_logic": { "type": "string" },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "web_search",
+              "web_fetch",
+              "code_exec",
+              "file_read",
+              "file_write",
+              "search_code",
+              "sub_skill_call",
+              "subagent",
+              "memory_read",
+              "memory_write",
+              "ask_user"
+            ]
+          },
+          "use": { "type": "string" },
+          "constraints": { "type": "string" }
+        }
+      }
+    },
+    "failure_modes": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "signal", "recovery"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^F[0-9]+$" },
+          "name": { "type": "string" },
+          "signal": { "type": "string" },
+          "recovery": { "type": "string" },
+          "severity": { "enum": ["block", "degrade"] }
+        }
+      }
+    },
+    "l1_tests": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "depends_on": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "provides": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "versioning": {
+      "type": "object",
+      "required": ["version", "status"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "status": {
+          "enum": ["experimental", "stable", "deprecated"]
+        },
+        "parent": { "type": "string" },
+        "changelog": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: python lab workflow
+    assert:
+      contains: ["python-standards", "check_python", "PEP 8", "pytest"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: outputs
+    assert:
+      contains: ["requirements.txt", "README", "report.md"]
+
+  - id: T3
+    description: integrity
+    assert:
+      contains: ["integrity", "PYTHON_NOT_FOUND"]
+
+  - id: T4
+    description: handoff context
+    assert:
+      contains: ["coding-homework-assistant", "lab_task"]

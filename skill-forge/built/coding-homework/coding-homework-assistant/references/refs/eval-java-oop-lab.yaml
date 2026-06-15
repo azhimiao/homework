@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: java lab
+    assert:
+      contains: ["java-standards", "check_java", "JUnit", "Maven"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: oop outputs
+    assert:
+      contains: ["mvn test", "report.md", "pom.xml"]
+
+  - id: T3
+    description: failures
+    assert:
+      contains: ["JAVA_NOT_FOUND", "cheat"]
+
+  - id: T4
+    description: deps
+    assert:
+      contains: ["coding-homework-assistant", "OOP"]

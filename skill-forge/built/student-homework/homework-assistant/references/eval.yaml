@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: unified STEM router
+    assert:
+      contains: ["assignment-catalog.yaml", "matlab-simulink-lab", "session.yaml", "stem-tool-matrix"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: confirm before install
+    assert:
+      contains: ["confirm", "install", "quartus-lab", "routing-rules", "universal-stem-workflow"]
+
+  - id: T3
+    description: accurate scoring and planned tools
+    assert:
+      contains: ["min_score", "tie_threshold", "major_weight", "status planned", "stem-universal-fallback"]
+
+  - id: T4
+    description: install and handoff all themes
+    assert:
+      contains: ["resolve_order", "simulation-lab", "coding-homework", "HANDOFF", "block install"]

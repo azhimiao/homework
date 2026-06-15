@@ -1,0 +1,17 @@
+student:
+  major: ""
+  assignment_text: ""
+matched:
+  id: ""
+  title: ""
+  score: 0
+  confirmed: false
+host: cursor
+scope: project
+project_dir: ""
+workspace: ""
+board: ""
+installed_skills: []
+status: routing
+deliverables: []
+notes: ""

@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: matlab workflow
+    assert:
+      contains: ["matlab-simulink-setup", "check_matlab", "Simulink", "params.md"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: outputs
+    assert:
+      contains: ["report-template", "outputs/figures", "report.md"]
+
+  - id: T3
+    description: failures
+    assert:
+      contains: ["MATLAB_NOT_FOUND", "fabricated plots"]
+
+  - id: T4
+    description: deps
+    assert:
+      contains: ["homework-assistant", "lab_task"]

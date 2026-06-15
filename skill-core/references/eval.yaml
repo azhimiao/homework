@@ -1,0 +1,6 @@
+tests:
+  - id: T1
+    description: skill has quick start and workflow after compile
+    assert:
+      sections: ["Quick Start", "Failure Modes"]
+      not_contains: ["PLACEHOLDER"]

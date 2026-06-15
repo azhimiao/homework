@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: alias unified router
+    assert:
+      contains: ["homework-assistant", "assignment-catalog.yaml", "matlab-simulink-lab", "session.yaml"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: confirm install simulation labs
+    assert:
+      contains: ["confirm", "install", "simulation-lab", "multisim-lab", "DELEGATE"]
+
+  - id: T3
+    description: all lab skills handoff
+    assert:
+      contains: ["keil-embedded-lab", "HANDOFF", "checklist.md", "stem-tool-matrix"]
+
+  - id: T4
+    description: planned tool fallback
+    assert:
+      contains: ["universal-stem-workflow", "planned-tool", "block install"]

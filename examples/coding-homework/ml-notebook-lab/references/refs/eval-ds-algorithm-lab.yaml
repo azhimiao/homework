@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: ds lab
+    assert:
+      contains: ["ds-algorithms-guide", "complexity", "pytest"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: algorithm
+    assert:
+      contains: ["complexity.md", "ds-algorithms-guide", "pytest"]
+
+  - id: T3
+    description: toolchain
+    assert:
+      contains: ["check_python", "no python/java"]
+
+  - id: T4
+    description: integrity
+    assert:
+      contains: ["LeetCode", "cheat"]

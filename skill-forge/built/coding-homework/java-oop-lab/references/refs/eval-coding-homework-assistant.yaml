@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: coding router
+    assert:
+      contains: ["assignment-catalog.yaml", "python-lab", "session.yaml"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: confirm install
+    assert:
+      contains: ["confirm", "install", "resolve_order", "coding-homework"]
+
+  - id: T3
+    description: lab skills list
+    assert:
+      contains: ["java-oop-lab", "ds-algorithm-lab", "ml-notebook-lab", "academic integrity"]
+
+  - id: T4
+    description: handoff
+    assert:
+      contains: ["HANDOFF", "checklist.md", "block install"]

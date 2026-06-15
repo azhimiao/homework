@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: quartus accurate workflow
+    assert:
+      contains: ["board-devices.yaml", "check_quartus", "Pin Planner"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: device accuracy
+    assert:
+      contains: ["10M50DAF484C7G", "MAX 10", "DE10-Lite", "wrong FPGA family"]
+
+  - id: T3
+    description: compile and verify
+    assert:
+      contains: ["quartus_sh", "build-log", "QUARTUS_NOT_FOUND"]
+
+  - id: T4
+    description: pins and failures
+    assert:
+      contains: ["pin-assignment", "conflicting pins", "handout"]

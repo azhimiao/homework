@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "skills": [
+    {
+      "name": "skill-core",
+      "version": "2.0.0",
+      "description": "Skill Protocol v2 compiler and meta-skill for building Agent Skills at scale.",
+      "path": "skill-core",
+      "status": "stable",
+      "tags": ["meta", "scripts"]
+    },
+    {
+      "name": "homework-assistant",
+      "version": "3.0.0",
+      "description": "Unified STEM homework router: major + assignment → score assignment-catalog, confirm, auto-install lab skills.",
+      "path": "examples/student-homework/homework-assistant",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:student-homework"]
+    },
+    {
+      "name": "quartus-lab",
+      "version": "2.0.0",
+      "description": "Intel Quartus Prime lab: device selection, pin assignment, compile, program, report.",
+      "path": "examples/student-homework/quartus-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:student-homework"]
+    },
+    {
+      "name": "coding-homework-assistant",
+      "version": "1.0.0",
+      "description": "Alias — delegates to homework-assistant unified catalog.",
+      "path": "examples/coding-homework/coding-homework-assistant",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:coding-homework"]
+    },
+    {
+      "name": "python-lab",
+      "version": "1.0.0",
+      "description": "Python coursework: scaffold, implement, tests, report.",
+      "path": "examples/coding-homework/python-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:coding-homework"]
+    },
+    {
+      "name": "java-oop-lab",
+      "version": "1.0.0",
+      "description": "Java OOP lab: Maven scaffold, JUnit, report.",
+      "path": "examples/coding-homework/java-oop-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:coding-homework"]
+    },
+    {
+      "name": "ds-algorithm-lab",
+      "version": "1.0.0",
+      "description": "Data structures / algorithms lab with complexity analysis.",
+      "path": "examples/coding-homework/ds-algorithm-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:coding-homework"]
+    },
+    {
+      "name": "ml-notebook-lab",
+      "version": "1.0.0",
+      "description": "ML / data analysis coursework with reproducible notebook pipeline.",
+      "path": "examples/coding-homework/ml-notebook-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:coding-homework"]
+    },
+    {
+      "name": "simulation-homework-assistant",
+      "version": "2.0.0",
+      "description": "Alias — delegates to homework-assistant unified catalog.",
+      "path": "examples/simulation-lab/simulation-homework-assistant",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:simulation-lab"]
+    },
+    {
+      "name": "matlab-simulink-lab",
+      "version": "1.0.0",
+      "description": "MATLAB/Simulink control or signal labs.",
+      "path": "examples/simulation-lab/matlab-simulink-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:simulation-lab"]
+    },
+    {
+      "name": "multisim-lab",
+      "version": "1.0.0",
+      "description": "NI Multisim circuit simulation lab.",
+      "path": "examples/simulation-lab/multisim-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:simulation-lab"]
+    },
+    {
+      "name": "keil-embedded-lab",
+      "version": "1.0.0",
+      "description": "Keil MDK embedded lab for MCU coursework.",
+      "path": "examples/simulation-lab/keil-embedded-lab",
+      "status": "stable",
+      "tags": ["scripts", "example", "theme:simulation-lab"]
+    }
+  ]
+}

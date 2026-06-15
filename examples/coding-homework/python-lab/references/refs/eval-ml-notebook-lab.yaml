@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: ml lab
+    assert:
+      contains: ["ml-notebook-guide", "jupyter", "sklearn"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: reproducibility
+    assert:
+      contains: ["random seed", "requirements.txt", "outputs/figures"]
+
+  - id: T3
+    description: metrics ethics
+    assert:
+      contains: ["leakage", "jupyter"]
+
+  - id: T4
+    description: notebook
+    assert:
+      contains: ["lab_task", "pandas", "sklearn"]

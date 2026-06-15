@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: multisim workflow
+    assert:
+      contains: ["multisim-setup", "check_multisim", "components.md"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: circuit sim
+    assert:
+      contains: ["outputs/waveforms", "ground", "report.md"]
+
+  - id: T3
+    description: failures
+    assert:
+      contains: ["MULTISIM_NOT_FOUND", "fabricated waveform"]
+
+  - id: T4
+    description: handoff
+    assert:
+      contains: ["lab_task", "homework-assistant"]
